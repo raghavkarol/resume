@@ -1,0 +1,194 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+% (c) 2017 Scott Clark <scott@scottclark.io> http://www.scottclark.io
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creatinvecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\robustify\cftdotfill
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt} % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75} % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93} % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+      \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Raghav Karol} & \textbf{\today} \\
+Senior Software Engineer at Basho Technologies, Inc & raghav.karol@gmail.com \\
+http://github.com/raghavkarol &  https://linkedin.com/in/raghavkarol\\
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+  \ressubheading{Technical University of Denmark}{Lyngby, Denmark}{M.Sc. Computer Systems Engineering}{2004 - 2006}
+  \begin{itemize}
+    \resitem{Master Project, A tool for analysis of concurrent programs, grade 11 (13 point scale)}
+    \resitem{Average 10.7 (13 point scale)}
+  \end{itemize}
+\item
+  \ressubheading{Thapar University}{Patiala, India}{B.Eng. Computer Engineering}{1998 - 2002}
+  \begin{itemize}
+    \resitem{Bachelor Project, rash, a lightweight Linux Shell, grade A (Top grade)}
+    \resitem{CGPA 8.22 (10 point scale)}
+  \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Industry Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+  \ressubheading{Basho Technologies Inc.}{Remote}{Senior Software Engineer}{October 2016 - current}
+  \begin{itemize}
+    \resitem{Part of globally distributed team working on Riak KV}
+    \resitem{{\bf Technologies:} Erlang/OTP}
+  \end{itemize}
+
+\item
+
+  \ressubheading{Issuu A/S.}{Copenhagen, Denmark}{Senior Software Engineer}{August 2011 - September 2016}
+  \begin{itemize}
+    \resitem{Co-developed version 1.0 backend systems in Erlang and Python}
+    \resitem{Developed, maintained and operated several backend systems}
+    \resitem{Participated in product, architecture, marketing and customer related discussions}
+    \resitem{Gathered and analyzed data for system optimization and business intelligence}
+    \resitem{Worked on live migration 3rd party payment provider}
+    \resitem{Co-designed and developed new database schema and live migrated 30M records}
+    \resitem{Involved in interviews and mentoring of new staff}
+    \resitem{
+      Took over development, maintenance and operations of a product
+      acquired by issuu from a startup. The original developers left
+      the company and there was no instituational knowledge or prior
+      experience in the technology stack
+    }
+    \resitem{{\bf Technologies:} Python, Erlang, Ruby on Rails, Bash, JavaScript, Solr, MySQL, Redis, Cassandra, Jenkins, AWS, AMQP, Graphite, Grafana}
+  \end{itemize}
+
+\item
+  \ressubheading{Motorola Aps.}{Copenhagen, Denmark}{Senior Staff Engineer}{August 2006 - July 2011}
+  \begin{itemize}
+   \resitem{Worked in network management, call control, and packet data services for motorola TETRA based networks}
+   \resitem{Lead developer for web network management system 1.0 for DIMETRA IP Compact}
+   \resitem{Part of small team that prototyped and deployed TETRA ISI Gateway using Erlang/OTP}
+   \resitem{Received 3 promotions and several internal awards}
+   \resitem{Involved in two technology transfers to motorola centers in Krakow, Poland and Chengdu, China}
+   \resitem{{\bf Technologies:} Java, Erlang/OTP, Solaris, bash, Tomcat, Wicket, Maven, HP OpenView, Interbase, CISCO and Netgear network equipment}
+  \end{itemize}
+
+\item
+  \ressubheading{Microsoft Aps.}{Copenhagen, Denmark}{SDET Intern}{January 2005 - July 2006}
+  \begin{itemize}
+    \resitem{Intern on a team that developed a test framework for Microsoft Dynamics AX}
+    \resitem{Gained in experience in design patterns, OOP and testing from skilled developers}
+    \resitem{{\bf Technologies:} X++, C\#, SQL-Server}
+  \end{itemize}
+
+\item
+  \ressubheading{Siemens AG.}{Ulm, Germany}{Systems Engineer}{February 2003 - July 2004}
+  \begin{itemize}
+    \resitem{Worked as build and software configuration manager for Siemens mobile phones software}
+    \resitem{Worked on migrating sources from proprietary CM system CM Synergy}
+    \resitem{Developed and maintained internal tooling using PERL}
+    \resitem{{\bf Technologies:} Perl, C, Visual C++, CM-Synergy, make}
+  \end{itemize}
+
+
+\item
+  \ressubheading{Siemens Information Systems Ltd.}{Delhi, India}{Systems Engineer}{October 2002 - January 2003}
+  \begin{itemize}
+    \resitem{Developed UI software for Siemens 55 generation phones }
+    \resitem{Doubled as team's build manager}
+    \resitem{{\bf Technologies:} C, Visual C++, GBS - Siemens proprietary RTOS}
+  \end{itemize}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item {\bf Languages:} Erlang/OTP, Python, Perl, bash, Ruby on Rails, Lisp, JavaScript, C\#, C, TCL
+\item {\bf SQL:} MySQL, Interbase/Firebird, SQL-Server
+\item {\bf NoSQL:} Riak, Redis, SOLR, Mnesia, Cassandra, Graphite
+\item {\bf Patforms:} AWS, Linux, Solaris, Windows
+\item {\bf Others:} RabbitMQ, Grafana, Docker, Make, Git, Emacs, Jenkins, Web Frameworks
+\item Solid software engineering experience in requirements, architecture, design, development, testing, devops, monitoring and operations, migration, upgrade and customer support
+\item Driven and motivated by learning and self-improvement
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Awards and Conferences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \vspace{-2pt}
+	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+	    \multicolumn{2}{c}{Co-speaker, Mission Critical With Erlang and QuickCheck, Erlang User Conference \cftdotfill{\cftdotsep}2010}\\
+            \multicolumn{2}{c}{Motorola Bravo AWARD ISI Project                                                \cftdotfill{\cftdotsep}2010}\\
+            \multicolumn{2}{c}{Erlang User Conference, Stockholm, Sweden                                       \cftdotfill{\cftdotsep}2010}\\
+            \multicolumn{2}{c}{JAOO 2010 Developer Conference, Aarhus, Denmark                                 \cftdotfill{\cftdotsep}2010}\\
+            \multicolumn{2}{c}{Motorola Q4 2009 Quality Star for contribution to DIMETRA IP Micro              \cftdotfill{\cftdotsep}2009}\\
+            \multicolumn{2}{c}{Motorola Bravo AWARD Web Manager                                                \cftdotfill{\cftdotsep}2009}\\
+            \multicolumn{2}{c}{JAOO 2009 Developer Conference, Aarhus, Denmark                                 \cftdotfill{\cftdotsep}2009}\\
+            \multicolumn{2}{c}{Motorola Bravo AWARD 6.1 NM Upgrade                                             \cftdotfill{\cftdotsep}2007}\\
+            \vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-16pt}
+
+
+\end{document}
